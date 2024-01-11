@@ -20,6 +20,7 @@ pip install beautifulsoup4 requests
 python flipkart_review_scraper.py
 ```
 ## Output
+
 The script generates a CSV file named reviews_data.csv containing the following columns:
 1. S.No.
 2. User
