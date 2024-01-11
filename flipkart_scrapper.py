@@ -4,6 +4,9 @@ import csv
 
 url = 'https://www.flipkart.com/apple-iphone-14-midnight-128-gb/product-reviews/itm9e6293c322a84?pid=MOBGHWFHECFVMDCX&lid=LSTMOBGHWFHECFVMDCXXRTRJG&marketplace=FLIPKART&page='
 
+header_config = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+}
 
 index = 0;
 data_rows = []
@@ -11,9 +14,8 @@ headers = ['S.No.', 'User', 'Rating', 'Review_summary', 'Customer_info', 'Date',
 cur_page = 1
 while(cur_page < 510):
     cur_url = url + str(cur_page);
-    response = requests.get(cur_url)
+    response = requests("GET", cur_url, headers = header_config);
     prev = len(data_rows)
-    print(prev, cur_page)
 
     if response.status_code == 200:
         soup = BeautifulSoup(response.content, 'html.parser')
