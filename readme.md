@@ -17,7 +17,7 @@ pip install beautifulsoup4 requests
 2. Run the script.
 
 ```bash
-python flipkart_review_scraper.py
+python flipkart_scrapper.py
 ```
 ## Output
 
