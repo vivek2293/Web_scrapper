@@ -51,7 +51,7 @@ while(cur_page < 510):
         cur_page = cur_page + 1
 
 
-with open('data.csv', 'w', newline='', encoding="utf-8") as csvfile:
+with open('reviews_data.csv', 'w', newline='', encoding="utf-8") as csvfile:
     csv_writer = csv.writer(csvfile)
     csv_writer.writerow(headers)
     csv_writer.writerows(data_rows)
