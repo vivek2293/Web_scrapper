@@ -14,7 +14,7 @@ headers = ['S.No.', 'User', 'Rating', 'Review_summary', 'Customer_info', 'Date',
 cur_page = 1
 while(cur_page < 510):
     cur_url = url + str(cur_page);
-    response = requests("GET", cur_url, headers = header_config);
+    response = requests.request("GET", cur_url, headers = header_config);
     prev = len(data_rows)
 
     if response.status_code == 200:
