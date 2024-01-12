@@ -8,11 +8,13 @@ header_config = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 }
 
-index = 0;
 data_rows = []
 headers = ['S.No.', 'User', 'Rating', 'Review_summary', 'Customer_info', 'Date', 'Upvote', 'Downvote', 'Review_detail']
+
 cur_page = 1
-while(cur_page < 510):
+index = 0
+last_page_number = 510;
+while(cur_page < last_page_number):
     cur_url = url + str(cur_page);
     response = requests.request("GET", cur_url, headers = header_config);
     prev = len(data_rows)
